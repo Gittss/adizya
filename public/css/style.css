@@ -1,0 +1,9 @@
+.links{
+    color:black;
+}
+.links a:hover{
+    color: rgb(250, 37, 37);
+}
+.required{
+    color: red;
+}

@@ -21,6 +21,10 @@ const userSchema = mongoose.Schema({
         unique: true,
         minlength: 10
     },
+    address:{
+        type: String,
+        required: true
+    },
     role:{
         type:String,
         enum: roles,

@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const User = require('../models/user')
+const util = require('../config/utilityFunctions')
 
 router.get('/signUp',(req,res)=>{
     res.render('signUp',{title:'Sign up'})
@@ -16,7 +17,10 @@ router.post('/signUp',(req,res) =>{
         }
         else {
             console.log("Email taken");
-            res.render('signUp',{title:'Email already exist'});
+            res.render('signUp',{
+                message:'Email already exist',
+                title:'Sign Up'
+            });
         };
     });
 })
@@ -57,13 +61,12 @@ router.post('/login',(req,res)=>{
 })
 
 function addUser(req,res){
-    var user=new User()
-    user.name=req.body.name;
-    user.email=req.body.email;
-    user.password=req.body.password;
-    if(req.body.role){
+    var user=new User(req.body)
+    var message;
+    if(req.body.role=='vendor'){
         if(req.body.code=='12345'){
-            user.role='admin'
+            user.role='vendor'
+            message='Registered successfully'
         }
         else message='Wrong admin code. You are registered as a user'
     }
@@ -72,38 +75,22 @@ function addUser(req,res){
             res.render('home',{
                 title:"Home",
                 user:user,
-                message:message,
-                layout:null
+                message:message
             });
         }
         else{
             if(err.name=='ValidationError'){
-                handleValidationError(err,req.body);
-                res.render('signUp',{user: req.body});
+                util.handleValidationError(err,req.body);
+                console.log(err)
+                console.log(req.body)
+                res.render('signUp',{
+                    title:'Sign Up',
+                    user: req.body
+                });
             }
             else console.log('error in Signing up -> '+err);
         }
     });
-};
-
-function handleValidationError(err,body){
-    for(field in err.errors){
-        switch(err.errors[field].path){
-            case 'name':
-                body['nameError']=err.errors[field].message;
-                break;
-            case 'email':
-                body['emailError']=err.errors[field].message;
-                break;
-            case 'password':
-                body['passwordError']=err.errors[field].message;
-                break;
-            case 'phoneNumber':
-                body['phoneNumberError']=err.errors[field].message;
-                break;
-            default: break;
-        }
-    }
 };
 
 module.exports = router;

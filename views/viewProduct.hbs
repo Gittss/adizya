@@ -1,0 +1,126 @@
+<style>
+	.img1:hover{
+		transform: scale(2,2);
+	transition: 0.29s ease;
+	}
+	.img2:hover{
+		transform: scale(2,2);
+	transition: 0.29s ease;
+	}
+	.img3:hover{
+		transform: scale(2,2);
+	transition: 0.29s ease;
+	}
+	.img4:hover{
+		transform: scale(2,2);
+	transition: 0.29s ease;
+	}
+</style>
+<!-- Page Content -->
+    <div class="best-features about-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Adizya - <br>
+                Women Beige & Blue Printed Straight Kurta</h2>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="right-image">
+              <img src="/img/feature-image.jpg" class="img1" alt=""style="height: 200px;width:200px;margin-bottom:5px;" >
+              <img src="/img/feature-image.jpg" class="img2" alt=""style="height: 200px;width:200px;margin-bottom:5px;">
+              <img src="/img/feature-image.jpg" class="img3" alt="" style="height: 200px;width:200px;margin-bottom:5px;">
+			  <img src="/img/feature-image.jpg" class="img4" alt="" style="height: 200px;width:200px;margin-bottom:5px;">	
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="left-content">
+              <h4>PRODUCT DETAILS</h4>
+              Beige and Blue printed straight kurta, has a mandarin collar, three-quarter sleeves, straight hem, and side slits<br>
+                <br>
+                <h4>Material & Care</h4>
+                <h5 style="font-size:medium;">Material :</h5>Viscose Rayon<br>
+                <h5 style="font-size:medium;">Care :</h5>Machine Wash<br><br>    
+                         
+                <h4>Complete The Look</h4>
+                Comfortable and stylish, this kurta from Adizya is ideal for any fashionista. Sport this beige piece with studded flats and minimal jewellery for a simple yet stunning evening ensemble.<br>
+                <br>
+                <h4>Size : </h4>
+				<div class="social-icons">
+				<button id="buy" style="width: 50px;height: 50px;background-color:lightgray;color: white; border:1px solid lightgray;">XS</button>
+				<button id="buy" style="width: 50px;height: 50px;background-color:lightgray;color: white; border:1px solid lightgray;">S</button>
+				<button id="buy" style="width: 50px;height: 50px;background-color:lightgray;color: white; border:1px solid lightgray;">M</button>
+				<button id="buy" style="width: 50px;height: 50px;background-color:lightgray;color: white; border:1px solid lightgray;">L</button>
+				<button id="buy" style="width: 50px;height: 50px;background-color:lightgray;color: white; border:1px solid lightgray;">XL</button>
+				<button id="buy" style="width: 50px;height: 50px;background-color:lightgray;color: white; border:1px solid lightgray;">XXL</button>
+				</div>
+            </div>
+			  <br>
+			  <fieldset>
+				  <h4>Quantity</h4>
+				  <button id="minus-btn disabled" type="button" style="width: 30px;height: 40px;background-color:white;color: black; border:1px solid lightgray;">-</button>
+				  <input type="text" id="quantity" value="1" style="width: 40px;height: 40px;text-align: center;">
+				  <button id="plus-btn" type="button" style="width: 30px;height: 40px;background-color:white;color: black; border:1px solid lightgray; counter-increment: inherit;">+</button><br><br>
+                   
+				  <button id="buy" style="width: 150px;height: 40px;background-image: linear-gradient(#80b3ff,#0066ff);color: white; border:1px solid #80b3ff;border-radius: 5px;"><b>Buy</b></button>
+              </fieldset>
+			  <script>
+		  //setting default attribute to disabled of minus button
+		  document.querySelector(".minus-btn").setAttribute("disabled","disabled");
+		  
+		  //taking value to increment-decrement input value
+		  var valueCount;
+		  
+		  //plus-btn
+		  document.querySelector(".plus-btn").addEventListener("click",function(){
+			  //getting value of input
+			  valueCount=document.getElementById("quantity").value;
+			  //input value increment by 1
+			  valueCount++;
+			  //setting increment input value
+			  document.getElementById("quantity").value=valueCount;
+		  })
+		  
+		  //minus-btn
+		  document.querySelector(".minus-btn").addEventListener("click",function(){
+			  //getting value of input
+			  valueCount=document.getElementById("quantity").value;
+			  //input value increment by 1
+			  valueCount--;
+			  //setting increment input value
+			  document.getElementById("quantity").value=valueCount;
+			  
+			  if (valueCount>1)
+				  {
+					  document.querySelector(".minus-btn").removeAttribute("disabled");
+					  document.querySelector(".minus-btn").classList.remove("disabled");
+				  }
+		  })
+	  </script>
+          </div>
+        </div>
+      </div>
+    </div>
+	  
+	  
+    
+    <!-- Bootstrap core JavaScript -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Additional Scripts -->
+    <script src="/js/custom.js"></script>
+    <script src="/js/owl.js"></script>
+    <script src="/js/slick.js"></script>
+    <script src="/js/isotope.js"></script>
+    <script src="/js/accordions.js"></script>
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>

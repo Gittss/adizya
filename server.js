@@ -31,3 +31,4 @@ app.listen(PORT,()=>{
 
 app.use('/',controllers.welcomeController)
 app.use('/account',controllers.accountController)
+app.use('/product',controllers.productController)

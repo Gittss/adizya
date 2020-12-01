@@ -15,7 +15,11 @@ const productSchema = mongoose.Schema({
         enum: ['X-Small','Small','Medium','Large','X-Large'],
         default: 'Medium'
     },
-    customerId:{
+    price:{
+        type: Number,
+        required: true
+    },
+    vendorId:{
         type: mongoose.Schema.Types.ObjectId,
         ref: User
     }
