@@ -1,7 +1,11 @@
+.boddy{
+    margin-top: 100px;
+}
 .links{
     color:black;
 }
 .links a:hover{
+    text-decoration: none;
     color: rgb(250, 37, 37);
 }
 .required{

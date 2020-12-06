@@ -78,7 +78,9 @@ router.get('/viewProducts:id',(req,res)=>{
                 res.render('viewProducts',{
                     title:'Your products',
                     name:doc.name,
-                    products:products
+                    products:products,
+                    role:1,
+                    cart:0
                 })
             }
             else{

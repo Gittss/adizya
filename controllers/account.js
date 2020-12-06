@@ -31,7 +31,7 @@ router.post('/login',(req,res)=>{
             if(req.body.email=='' | req.body.password==''){
                 if(req.body.email=='' & req.body.password=='')
                     res.render('login',{
-                        title:'Welcome',
+                        title:'Login',
                         uid:'This field is required',
                         ups:'This field is required'
                     });
@@ -42,18 +42,24 @@ router.post('/login',(req,res)=>{
             }
             else if(obj==null){
                 res.render('login',{
+                    title:'Login',
                     viewTitle:'User does not exist'
                 })
             }
             else if(req.body.password!=obj.password || req.body.password==null){
                 res.render('login',{
+                    title:'Login',
                     viewTitle:'Incorrect Password'
                 })
             }
-            else if(req.body.password==obj.password){
+            else if(req.body.password===obj.password){
+                var ven=0;
+                if(obj.role=='vendor') ven=1;
                 res.render('home',{
+                    title:'Home',
                     user:obj,
-                    title:'Home'
+                    message:'Welcome '+obj.name,
+                    ven:ven
                 })
             }
         }else console.log('Error in signing in')
@@ -63,19 +69,25 @@ router.post('/login',(req,res)=>{
 function addUser(req,res){
     var user=new User(req.body)
     var message;
+    var ven=0;
     if(req.body.role=='vendor'){
         if(req.body.code=='12345'){
+            ven=1;
             user.role='vendor'
-            message='Registered successfully'
+            message='Welcome '+user.name
         }
-        else message='Wrong admin code. You are registered as a user'
+        else{ 
+            message='Wrong admin code. You are registered as a user'
+            user.role='user'
+        }
     }
     user.save((err)=>{
         if(!err){
             res.render('home',{
                 title:"Home",
                 user:user,
-                message:message
+                message:message,
+                ven:ven
             });
         }
         else{

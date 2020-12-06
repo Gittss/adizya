@@ -89,15 +89,15 @@ a.filled-button:hover {
 }
 
 .products-heading {
-	background-image: url(../images/products-heading.jpg);
+	background-image: url(../img/products-heading.jpg);
 }
 
 .about-heading {
-	background-image: url(../images/about-heading.jpg);
+	background-image: url(../img/about-heading.jpg);
 }
 
 .contact-heading {
-	background-image: url(../images/contact-heading.jpg);
+	background-image: url(../img/contact-heading.jpg);
 }
 
 .page-heading {
@@ -213,7 +213,7 @@ header {
 	-webkit-transition: all 0.3s ease-in-out 0s;
     -moz-transition: all 0.3s ease-in-out 0s;
     -o-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
 }
 header .navbar {
 	padding: 17px 0px;
