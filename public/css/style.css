@@ -11,3 +11,19 @@
 .required{
     color: red;
 }
+.form-elegant{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+.containerr{
+    color: antiquewhite;
+    background-color: rgba(27, 23, 23, 0.842);
+    padding: 4%;
+    border: 2px solid rgb(199, 41, 20);
+    border-radius: 15px;
+    box-shadow: 4px 4px 6px grey;
+}
+.btn{
+    box-shadow: 2px 3px 5px black;
+}

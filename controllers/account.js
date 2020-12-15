@@ -93,8 +93,6 @@ function addUser(req,res){
         else{
             if(err.name=='ValidationError'){
                 util.handleValidationError(err,req.body);
-                console.log(err)
-                console.log(req.body)
                 res.render('signUp',{
                     title:'Sign Up',
                     user: req.body
