@@ -19,7 +19,7 @@ const productSchema = new mongoose.Schema({
         required: true
     },
     image:{
-        
+        //check
     },
     vendorId:{
         type: mongoose.Schema.Types.ObjectId,
