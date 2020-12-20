@@ -1,0 +1,82 @@
+<div>
+<h1 style="text-align:center;margin-bottom:10px">Welcome {{name}}</h1>
+</div>
+<div style="text-align:center;margin-bottom:10px;color:red">{{message}}</div>
+<div class="products">
+  <div class="filters">
+    <ul>
+      {{#if cart}}
+        <li data-filter=".des"><a class="links" href="/cart/bill/{{uid}}" >Checkout</a> </li>
+        <li data-filter=".des"><a class="links" href="/cart/{{uid}}" >Continue shopping</a> </li>
+      {{else}}
+        <li data-filter=".des"><a class="links" href="/cart/view/{{uid}}">My cart</a> </li>
+      {{/if}}
+    </ul>
+  </div>
+</div>
+{{#if role}}
+  <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+    <thead>
+      <th></th> 
+      <th>Name</th> 
+      <th>Dresscode</th>
+      <th>Size</th>
+      <th>Price</th>
+      <th></th>
+      <th></th>
+    </thead>
+    {{#each products}}
+    <tbody>
+        <tr>
+          <td><a href="/product/view{{this.id}}"><button class="btn"><i class="fa fa-eye"></i> </button></a></td>
+          <td>{{this.name}}</td>
+          <td>{{this.dresscode}}</td>
+          <td>{{this.size}}</td>
+          <td>{{this.price}}</td>
+          {{#if ../cart}}
+              <td><a href="/cart/update{{../uid}}/{{this.id}}"><button class="btn"><i class="fa fa-trash"></i> Remove</button></a></td>
+            {{else}}
+              <td><a href="/product/update{{this.id}}"><button class="btn"><i class="fa fa-pencil"></i> Update</button></a></td>
+              <td><a href="/product/delete{{this.id}}"><button class="btn"><i class="fa fa-trash-o"></i> Delete</button></a></td>
+          {{/if}}  
+        </tr>
+      </tbody>  
+      {{/each}}
+  </table>
+{{else}}
+  {{#each products}}
+    <div class="col-md-12">
+      <div class="filters-content">
+        <div class="row grid">
+            <div class="col-lg-4 col-md-4 all des">
+              <div class="product-item">
+                <a href="#"><img src="/img/product_01.jpg" alt=""></a>
+                <div class="down-content">
+                  <a href="#"><h4>{{this.name}}</h4></a>
+                  <h6>{{this.price}}</h6>
+                  <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                  <button style="width: 150px;height: 40px;background-image: linear-gradient(#80b3ff,#0066ff);color: white; border:1px solid #80b3ff;border-radius: 5px;"><a class="links" href="/cart/add{{../uid}}/{{this.id}}">Add to cart</a></button>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+{{/if}}
+<a href="" id="link1" onClick="getURL();" class="previous">&laquo; Previous</a>
+<a id="link" href="" class="next">Next &raquo;</a>
+<script type="text/javascript">
+(function() {
+    const params = new URLSearchParams(window.location.search)
+    page=params.get('page');
+    page=parseInt(page)
+    page1=parseInt(page)
+    page=page+1;
+    page1=page1-1;
+    var strLink = "http://localhost:3000/viewProducts?page="+page;
+    var strLink1 = "http://localhost:3000/viewProducts?page="+page1;
+    document.getElementById("link").setAttribute("href",strLink);
+   if (page1>=1) {document.getElementById("link1").setAttribute("href",strLink1);}
+})();
+</script>

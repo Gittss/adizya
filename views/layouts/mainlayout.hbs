@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Adizya : {{title}}</title>
+        <link rel="icon" href="https://www.freelogodesign.org/file/app/client/thumb/2c5aed90-f2f8-4fd5-a449-4988a39d2cf0_200x200.png?1585050948067" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+        <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/fontawesome.css">
+        <link rel="stylesheet" href="/css/templatemo-sixteen.css">
+        <link rel="stylesheet" href="/css/owl.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="/vendor/jquery/jquery.min.js"></script>
+        <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Additional Scripts -->
+        <script src="/js/custom.js"></script>
+        <script src="/js/owl.js"></script>
+        <script src="/js/slick.js"></script>
+        <script src="/js/isotope.js"></script>
+        <script src="/js/accordions.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            function sum(index) {
+                console.log('billing...')
+                var total = 0;
+                $('table tr').each(function() {
+                    var value = parseInt($('td', this).eq(index).text());
+                    if (!isNaN(value)) {
+                        total += value;
+                    }
+                });
+                $('table tfoot td').eq(index).text('Total: ' + total);
+            }
+        </script>
+
+    </head>
+    <body>
+        {{>header}} <br>
+        <div class="boddy">
+            {{{body}}}
+        </div>
+        {{>footer}}
+    </body>
+</html>
