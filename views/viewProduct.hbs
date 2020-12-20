@@ -23,15 +23,12 @@
           <div class="col-md-12">
             <div class="section-heading">
               <h2>Adizya - <br>
-                Women Beige & Blue Printed Straight Kurta</h2>
+                {{product.name}}</h2>
             </div>
           </div>
           <div class="col-md-6">
             <div class="right-image">
-              <img src="/img/feature-image.jpg" class="img1" alt=""style="height: 200px;width:200px;margin-bottom:5px;" >
-              <img src="/img/feature-image.jpg" class="img2" alt=""style="height: 200px;width:200px;margin-bottom:5px;">
-              <img src="/img/feature-image.jpg" class="img3" alt="" style="height: 200px;width:200px;margin-bottom:5px;">
-			  <img src="/img/feature-image.jpg" class="img4" alt="" style="height: 200px;width:200px;margin-bottom:5px;">	
+              <img src="/product/getImage/{{product.id}}" class="img1" alt=""style="height: 200px;width:200px;margin-bottom:5px;" >
             </div>
           </div>
           <div class="col-md-6">
@@ -46,25 +43,8 @@
                 <h4>Complete The Look</h4>
                 Comfortable and stylish, this kurta from Adizya is ideal for any fashionista. Sport this beige piece with studded flats and minimal jewellery for a simple yet stunning evening ensemble.<br>
                 <br>
-                <h4>Size : </h4>
-				<div class="social-icons">
-				<button id="buy" style="width: 50px;height: 50px;background-color:lightgray;color: white; border:1px solid lightgray;">XS</button>
-				<button id="buy" style="width: 50px;height: 50px;background-color:lightgray;color: white; border:1px solid lightgray;">S</button>
-				<button id="buy" style="width: 50px;height: 50px;background-color:lightgray;color: white; border:1px solid lightgray;">M</button>
-				<button id="buy" style="width: 50px;height: 50px;background-color:lightgray;color: white; border:1px solid lightgray;">L</button>
-				<button id="buy" style="width: 50px;height: 50px;background-color:lightgray;color: white; border:1px solid lightgray;">XL</button>
-				<button id="buy" style="width: 50px;height: 50px;background-color:lightgray;color: white; border:1px solid lightgray;">XXL</button>
-				</div>
+				
             </div>
-			  <br>
-			  <fieldset>
-				  <h4>Quantity</h4>
-				  <button id="minus-btn disabled" type="button" style="width: 30px;height: 40px;background-color:white;color: black; border:1px solid lightgray;">-</button>
-				  <input type="text" id="quantity" value="1" style="width: 40px;height: 40px;text-align: center;">
-				  <button id="plus-btn" type="button" style="width: 30px;height: 40px;background-color:white;color: black; border:1px solid lightgray; counter-increment: inherit;">+</button><br><br>
-                   
-				  <button id="buy" style="width: 150px;height: 40px;background-image: linear-gradient(#80b3ff,#0066ff);color: white; border:1px solid #80b3ff;border-radius: 5px;"><b>Buy</b></button>
-              </fieldset>
 			  <script>
 		  //setting default attribute to disabled of minus button
 		  document.querySelector(".minus-btn").setAttribute("disabled","disabled");

@@ -14,7 +14,6 @@ router.post('/',(req,res)=>{
             pass: process.env.GMAIL_PASSWORD
         }
     });
-    console.log(transporter)
     var mailOptions = {
         from: process.env.GMAIL_USER,
         to: req.body.email,

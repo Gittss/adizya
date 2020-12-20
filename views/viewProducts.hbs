@@ -5,11 +5,15 @@
 <div class="products">
   <div class="filters">
     <ul>
-      {{#if cart}}
-        <li data-filter=".des"><a class="links" href="/cart/bill/{{uid}}" >Checkout</a> </li>
-        <li data-filter=".des"><a class="links" href="/cart/{{uid}}" >Continue shopping</a> </li>
+      {{#if role}}
+        <li data-filter=".des"><a class="links" href="/product/add{{uid}}">Add more products</a> </li>
       {{else}}
-        <li data-filter=".des"><a class="links" href="/cart/view/{{uid}}">My cart</a> </li>
+        {{#if cart}}
+          <li data-filter=".des"><a class="links" href="/cart/bill/{{uid}}" >Checkout</a> </li>
+          <li data-filter=".des"><a class="links" href="/cart/{{uid}}" >Continue shopping</a> </li>
+        {{else}}
+            <li data-filter=".des"><a class="links" href="/cart/view/{{uid}}">My cart</a> </li>
+        {{/if}}        
       {{/if}}
     </ul>
   </div>
