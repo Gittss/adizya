@@ -96,17 +96,17 @@ a.filled-button:hover {
 	background-image: url(../img/about-heading.jpg);
 }
 
-.contact-heading {
+/* .contact-heading {
 	background-image: url(../img/contact-heading.jpg);
-}
+} */
 
-.page-heading {
+/* .page-heading {
 	padding: 210px 0px 130px 0px;
 	text-align: center;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-}
+} */
 
 .page-heading .text-content h4 {
 	color: #f33f3f;
@@ -313,12 +313,12 @@ header .navbar {
 .banner {
 	position: relative;
 	text-align: center;
-	padding-top: 80px;
+	padding-top: -100px;
 }
 
 .banner-item-01 {
 	padding: 300px 0px;
-	background-image: url(../images/slide_01.jpg);
+	background-image: url(../img/s1.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -326,7 +326,7 @@ header .navbar {
 
 .banner-item-02 {
 	padding: 300px 0px;
-	background-image: url(../images/slide_02.jpg);
+	background-image: url(../img/s2.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -334,7 +334,7 @@ header .navbar {
 
 .banner-item-03 {
 	padding: 300px 0px;
-	background-image: url(../images/slide_03.jpg);
+	background-image: url(../img/s3.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -743,7 +743,7 @@ footer .inner-content p a {
 /* Services */
 
 .services {
-	background-image: url(../images/services-bg.jpg);
+	background-image: url(../img/services-bg.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;

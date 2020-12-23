@@ -41,13 +41,13 @@ https://templatemo.com/tm-546-sixteen-clothing
     <!-- ***** Preloader End ***** -->
 
     <!-- Page Content -->
-    <div class="page-heading contact-heading header-text">
+    <div class="page-heading contact-heading header-text" style="height:-50px; position: relative;">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="text-content">
-              <h4>contact us</h4>
-              <h2>let’s get in touch</h2>
+            <div class="text-content"style="top:-200px;">
+              <h4 style="font-size: 50px;margin-left:-130px;padding:20px;">contact us</h4>
+              <!--<h2>let’s get in touch</h2>-->
             </div>
           </div>
         </div>
@@ -55,26 +55,27 @@ https://templatemo.com/tm-546-sixteen-clothing
     </div>
 
 
-    <div class="find-us">
+    {{!-- <div class="find-us">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
               <h2>Our Location on Maps</h2>
             </div>
-          </div>
-          <div class="col-md-8">
+          </div> --}}
+         
 <!-- How to change your own map point
 	1. Go to Google Maps
 	2. Click on your location point
 	3. Click "Share" and choose "Embed map" tab
 	4. Copy only URL and paste it within the src="" field below
 -->
+ {{!-- <div class="col-md-8">
             <div id="map">
               <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="330px" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
-          </div>
-          <div class="col-md-4">
+          </div> --}}
+          {{!-- <div class="col-md-4">
             <div class="left-content">
               <h4>About our office</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisic elit. Sed voluptate nihil eumester consectetur similiqu consectetur.<br><br>Lorem ipsum dolor sit amet, consectetur adipisic elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti.</p>
@@ -85,13 +86,13 @@ https://templatemo.com/tm-546-sixteen-clothing
                 <li><a href="#"><i class="fa fa-behance"></i></a></li>
               </ul>
             </div>
-          </div>
-        </div>
+          </div> --}}
+        {{!-- </div>
       </div>
-    </div>
+    </div> --}}
 
     
-    <div class="send-message">
+    <div class="send-message" style="margin-left:-220px;top:-70px;position:relative">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -101,26 +102,26 @@ https://templatemo.com/tm-546-sixteen-clothing
           </div>
           <div class="col-md-8">
             <div class="contact-form">
-              <form id="contact" action="/contact/" method="post">
+              <form id="contact" action="/contact/" method="post" style="width:500px";>
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <fieldset>
-                      <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
+                      <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="" style="width:600px;">
                     </fieldset>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <fieldset>
-                      <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail Address" required="">
+                      <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail Address" required="" style="width:600px;">
                     </fieldset>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <fieldset>
-                      <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject" required="">
+                      <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject" required="" style="width:600px;"> 
                     </fieldset>
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
-                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
+                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required="" style="width:600px;"></textarea>
                     </fieldset>
                   </div>
                   <div class="col-lg-12">
@@ -133,6 +134,13 @@ https://templatemo.com/tm-546-sixteen-clothing
             </div>
           </div>
           <div class="col-md-4">
+			  <div class="col-md-8">
+            <div id="map" style="left-200px;">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.7373626340313!2d77.06746601550721!3d28.63763259059997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04e8cba32ced%3A0xd7b502814c20ca2!2sAdizya!5e0!3m2!1sen!2sin!4v1607018302334!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+              
+            </div>
+          </div>
+          {{!-- <div class="col-md-4">
             <ul class="accordion">
               <li>
                   <a>Accordion Title One</a>
@@ -159,12 +167,12 @@ https://templatemo.com/tm-546-sixteen-clothing
                   </div>
               </li>
             </ul>
-          </div>
+          </div> --}}
         </div>
       </div>
     </div>
 
-    <div class="happy-clients">
+    {{!-- <div class="happy-clients">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -201,10 +209,10 @@ https://templatemo.com/tm-546-sixteen-clothing
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
 
     
-    <footer>
+    {{!-- <footer>
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -216,7 +224,7 @@ https://templatemo.com/tm-546-sixteen-clothing
           </div>
         </div>
       </div>
-    </footer>
+    </footer> --}}
 
 
     <!-- Bootstrap core JavaScript -->
