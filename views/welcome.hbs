@@ -1,4 +1,4 @@
-<!-- ***** Preloader Start ***** -->
+<!-- ** Preloader Start ** -->
     <div id="preloader">
         <div class="jumper">
             <div></div>
@@ -6,7 +6,7 @@
             <div></div>
         </div>
     </div>  
-    <!-- ***** Preloader End ***** -->
+    <!-- ** Preloader End ** -->
 
     <!-- Page Content -->
     <!-- Banner Starts Here -->
@@ -38,16 +38,14 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <h2>About Sixteen Clothing</h2>
+              <h2>About Adizya Clothing</h2>
             </div>
           </div>
           <div class="col-md-6">
             <div class="left-content">
               <h4>Looking for the best products?</h4>
-              <p>Our website Adizya Clothing is an attempt at bringing our business, Adizya Clothing to the online world, to expand its horizons and broaden its audience, bringing a company to the online world is one of the best things that can possibly happen to it, as it helps a once small company to grow leaps and bounds in a short time span. We also will be hosting the products made by smaller industries and passion products, like socks and sweaters made by grandmothers in their free time.
-</p>
-              
-              <a href="about.hbs" class="filled-button">Read More</a>
+              <p>Our website Adizya Clothing is an attempt at bringing our business, Adizya Clothing to the online world, to expand its horizons and broaden its audience, bringing a company to the online world is one of the best things that can possibly happen to it, as it helps a once small company to grow leaps and bounds in a short time span. We also will be hosting the products made by smaller industries and passion products, like socks and sweaters made by grandmothers in their free time.</p>
+              <a href="http://localhost:3000/about" class="filled-button">Read More</a>
             </div>
           </div>
           <div class="col-md-6">
@@ -64,30 +62,56 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
+              <h2>Bestsellers</h2>
+              {{#each best}}
+                <div class="col-md-4">
+                  <div class="product-item">
+                    <a href="#"><img src="/product/getImage/{{product.id}}" alt="" style="height: 200px;width:200px;margin-bottom:5px;"></a>
+                    <div class="down-content">
+                      <a href="#"><h4>{{this.name}}</h4></a>
+                      <h6>{{this.price}}</h6>
+                      <p>{{this.description}}</p>
+                    </div>
+                  </div>
+                </div>
+              {{/each}}
               <h2>Latest Products</h2>
               <a href="/product/viewAllProducts">view all products <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
-          <h2>Bestsellers</h2>
-          {{#each best}}
-            <div class="col-md-4">
-              <div class="product-item">
-                <a href="#"><img src="/product/getImage/{{product.id}}" alt="" style="height: 200px;width:200px;margin-bottom:5px;"></a>
-                <div class="down-content">
-                  <a href="#"><h4>{{this.name}}</h4></a>
-                  <h6>{{this.price}}</h6>
-                  <p>{{this.description}}</p>
-                </div>
+          <div class="col-md-4">
+            <div class="product-item">
+              <a href="#"><img src="img/Front.jpg" alt=""></a>
+              <div class="down-content">
+                <a href="#"><h4>Adizya</h4></a>
+                <h6>Rs 1399</h6>
+                <p>Beige and Blue printed straight kurta, has a mandarin collar, three-quarter sleeves, straight hem, and side slits.</p>
+                {{!-- <ul class="stars">
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                </ul>
+                <span>Reviews (24)</span> --}}
               </div>
             </div>
-          {{/each}}
+          </div>
           <div class="col-md-4">
             <div class="product-item">
               <a href="#"><img src="img/p2_Front.jpg" alt=""></a>
               <div class="down-content">
                 <a href="#"><h4>Adizya</h4></a>
-                <h6>$30.25</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                <h6>Rs.2099</h6>
+                <p>Pink and cream-coloured embroidered kurta with trousers Pink straight calf length kurta, has a mandarin collar, three-quarter sleeves, straight hem, multiple slits Cream-coloured embroidered trousers, has partially elasticated waistband, drawstring closure.</p>
+                {{!-- <ul class="stars">
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                </ul>
+                <span>Reviews (21)</span> --}}
               </div>
             </div>
           </div>
@@ -96,8 +120,8 @@
               <a href="#"><img src="img/p3_Front.jpg" alt=""></a>
               <div class="down-content">
                 <a href="#"><h4>Adizya</h4></a>
-                <h6>$20.45</h6>
-                <p>Sixteen Clothing is free CSS template provided by TemplateMo.</p>
+                <h6>Rs.2599</h6>
+                <p>Brown and mustard yellow embroidered kurta with palazzos and dupatta Brown straight calf length kurta, has a round neck, three-quarter sleeves, side slits Brown solid palazzos, has elasticated waistband, slip-on closure Mustard yellow solid dupatta, has taping border.</p>
                 {{!-- <ul class="stars">
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
@@ -114,8 +138,8 @@
               <a href="#"><img src="img/p4_Front.jpg" alt=""></a>
               <div class="down-content">
                 <a href="#"><h4>Adizya</h4></a>
-                <h6>$15.25</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                <h6>Rs.2099</h6>
+                <p>Sea Green and golden gotta patti kurta with palazzos Sea Green and golden gotta patti straight calf length kurta, has a round neck, three-quarter sleeves, straight hem, side slits Sea Green solid palazzos, has elasticated waistband, drawstring closure.</p>
                 {{!-- <ul class="stars">
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
@@ -132,8 +156,8 @@
               <a href="#"><img src="img/p5_Front.jpg" alt=""></a>
               <div class="down-content">
                 <a href="#"><h4>Adizya</h4></a>
-                <h6>$12.50</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                <h6>Rs.1899</h6>
+                <p>Mustard and red embroidered kurta with palazzos Mustard and red straight calf length kurta, has a round neck, three-quarter sleeves, straight hem, side slits Red Embroidered palazzos, has elasticated waistband, drawstring closure.</p>
                 {{!-- <ul class="stars">
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
@@ -150,8 +174,8 @@
               <a href="#"><img src="img/p6_Front.jpg" alt=""></a>
               <div class="down-content">
                 <a href="#"><h4>Adizya</h4></a>
-                <h6>$22.50</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                <h6>Rs.1899</h6>
+                <p>Orange, blue and black kurta with trousers Orange, blue and black printed straight calf length kurta, has a mandarin collar, three-quarter sleeves, straight hem, side slits Black solid trousers, has elasticated waistband, drawstring closure.</p>
                 {{!-- <ul class="stars">
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
