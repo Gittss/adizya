@@ -48,16 +48,18 @@
       {{/each}}
   </table>
 {{else}}
-  {{#each products}}
-    <div class="col-md-12">
+{{!-- <div style="display: inline-block; margin-left:500px;position:relative;"> --}}
+  <div class="col-md-12">
       <div class="filters-content">
         <div class="row grid">
+  {{#each products}}
+    
             <div class="col-lg-4 col-md-4 all des">
-              <div class="product-item">
-                <a href="#"><img src="/product/getImage/{{this.id}}" class="img1" alt=""style="height: 200px;width:200px;margin-bottom:5px;" ></a>
+              <div class="product-item" style="height:600px; width:450px;margin-bottom:50px;border:1px solid grey;margin-left:100px;margin-right:50px;">
+                <a href="#"><img src="/product/getImage/{{this.id}}" class="img1" alt=""style="height: 250px;width:200px;margin-bottom:5px;margin-top:40px;margin-left:120px;" ></a>
                 <div class="down-content">
                   <a href="#"><h4>{{this.name}}</h4></a>
-                  <h6>Rs. {{this.price}}</h6>
+                  <h6 style="margin-right:50px;">Rs. {{this.price}}</h6>
                   <p>{{this.description}}</p>
                   <h5>Material & Care</h5>
                   <h6 style="font-size:medium;"></h6>{{this.material}}<br>
@@ -66,13 +68,15 @@
                 </div>
               </div>
             </div>
-        </div>
+        
+  {{/each}}
+  </div>
       </div>
     </div>
-  {{/each}}
+{{!--</div>--}}
 {{/if}}
-<a href="" id="link1" onClick="getURL();" class="previous">&laquo; Previous</a>
-<a id="link" href="" class="next">Next &raquo;</a>
+<a href="" id="link1" onClick="getURL();" class="previous" >&laquo; Previous</a>
+<a id="link" href="" class="next" >Next &raquo;</a>
 <script type="text/javascript">
 (function() {
     const params = new URLSearchParams(window.location.search)

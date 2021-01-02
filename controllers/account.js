@@ -141,7 +141,7 @@ function addUser(req, res) {
         title: "Home",
         user: user,
         message: message,
-        ven: ven,
+        role: ven,
       });
     } else {
       if (err.name == "ValidationError") {
