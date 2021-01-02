@@ -87,21 +87,26 @@ router.post("/add:id", upload.single("file"), (req, res) => {
 
 router.get("/viewProducts:id", (req, res) => {
   User.findById(req.params.id, (err, doc) => {
-    Product.find({ vendorId: req.params.id }, (err, products) => {
-      if (!err) {
-        res.render("viewProducts", {
-          title: "Your products",
-          name: doc.name,
-          uid: doc.id,
-          products: products,
-          role: 1,
-          cart: 0,
-        });
-      } else {
-        console.log(err);
-        res.redirect("back");
+    Product.find(
+      { vendorId: req.params.id },
+      {},
+      { sort: { price: 1 } },
+      (err, products) => {
+        if (!err) {
+          res.render("viewProducts", {
+            title: "Your products",
+            name: doc.name,
+            uid: doc.id,
+            products: products,
+            role: 1,
+            cart: 0,
+          });
+        } else {
+          console.log(err);
+          res.redirect("back");
+        }
       }
-    });
+    );
   });
 });
 

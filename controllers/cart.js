@@ -1,11 +1,10 @@
 const router = require("express").Router();
 const { Product, User } = require("../models");
-const product = require("../models/product");
 
 router.get("/:id", (req, res) => {
   User.findById(req.params.id, (err, user) => {
     if (!err) {
-      Product.find((err, products) => {
+      Product.find({}, {}, { sort: { price: 1 } }, (err, products) => {
         res.render("viewProducts", {
           title: "Buy products",
           name: user.name,
