@@ -54,11 +54,14 @@
         <div class="row grid">
             <div class="col-lg-4 col-md-4 all des">
               <div class="product-item">
-                <a href="#"><img src="/img/product_01.jpg" alt=""></a>
+                <a href="#"><img src="/product/getImage/{{this.id}}" class="img1" alt=""style="height: 200px;width:200px;margin-bottom:5px;" ></a>
                 <div class="down-content">
                   <a href="#"><h4>{{this.name}}</h4></a>
-                  <h6>{{this.price}}</h6>
-                  <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                  <h6>Rs. {{this.price}}</h6>
+                  <p>{{this.description}}</p>
+                  <h5>Material & Care</h5>
+                  <h6 style="font-size:medium;"></h6>{{this.material}}<br>
+                  <h6 style="font-size:medium;"></h6>{{this.care}}<br><br>                   
                   <button style="width: 150px;height: 40px;background-image: linear-gradient(#80b3ff,#0066ff);color: white; border:1px solid #80b3ff;border-radius: 5px;"><a class="links" href="/cart/add{{../uid}}/{{this.id}}">Add to cart</a></button>
                 </div>
               </div>

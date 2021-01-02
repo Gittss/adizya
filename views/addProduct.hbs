@@ -14,6 +14,11 @@
             <span style="color: red;">{{product.dresscodeError}}</span>
         </div>
         <div class="form-group">
+            <label for="exampleInputEmail1">Description</label>
+            <input name="description" type="text" class="form-control" id="exampleInputEmail1" placeholder="Product details" value="{{product.description}}">
+            <span style="color: red;">{{product.descriptionError}}</span>
+        </div>
+        <div class="form-group">
             <label for="exampleFormControlSelect1">Size</label>
             <select name="size" class="form-control" id="exampleFormControlSelect1" value="{{product.size}}">
             <option>X-Small</option>

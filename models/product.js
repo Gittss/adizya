@@ -34,8 +34,8 @@ const productSchema = new mongoose.Schema({
   },
   care: {
     type: String,
-    enum: ["Hand wash", "Machine Wash"],
-    default: "Machine Wash",
+    enum: ["Hand wash", "Machine wash"],
+    default: "Machine wash",
   },
   vendorId: {
     type: mongoose.Schema.Types.ObjectId,
