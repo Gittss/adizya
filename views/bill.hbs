@@ -21,13 +21,13 @@
                 <td>{{this.price}}</td>
             </tr>
         </tbody>
+        {{/each}}
         <tfoot>
             <tr>
                 <td colspan="4" style="text-align: right;">Billing Amount >></td>
-                <td style="border: 2px solid black;">{{../total}}</td>
+                <td style="border: 2px solid black;">{{total}}</td>
             </tr>
         </tfoot>
-        {{/each}}
     </table>
     <div>
         <a class="btn" style="float:right; margin-right:20px; background-color: green; color: white;" href="/cart/cod/{{uid}}"><i class="fa fa-money"></i> Cash on Delivery</a>

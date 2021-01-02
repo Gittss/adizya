@@ -124,10 +124,10 @@ router.get("/update/:id", (req, res) => {
 function addUser(req, res) {
   var user = new User(req.body);
   var message;
-  var ven = 0;
+  var role = 0;
   if (req.body.role == "vendor") {
     if (req.body.code == "12345") {
-      ven = 1;
+      role = 1;
       user.role = "vendor";
       message = "Welcome " + user.name;
     } else {
@@ -141,7 +141,7 @@ function addUser(req, res) {
         title: "Home",
         user: user,
         message: message,
-        ven: ven,
+        role: role,
       });
     } else {
       if (err.name == "ValidationError") {
