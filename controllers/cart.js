@@ -70,10 +70,28 @@ router.get("/bill/:uid", (req, res) => {
         }
         res.render("bill", {
           title: "Billing",
+          uid: req.params.uid,
           name: user.name,
           products: products,
           total: total,
         });
+      });
+    }
+  });
+});
+
+router.get("/cod/:uid", (req, res) => {
+  User.findById(req.params.uid, (err, doc) => {
+    if (!err) {
+      Product.find({ _id: { $in: doc.cart } }, (err, products) => {
+        for (i = 0; i < products.length; i++) {
+          products[i].updateOne(products[i].purchased++);
+          products[i].save();
+        }
+      });
+      res.render("thankYou", {
+        title: "Thank You",
+        name: doc.name,
       });
     }
   });
