@@ -23,49 +23,55 @@
 <div class="form-elegant ">
     <div class="containerr">
         <form action="/account/signUp" method="POST">
+        <input type="hidden" name="id" value="{{user.id}}">
         <div class="form-group">
             <label for="exampleInputEmail1">Name</label><span style="color: red;">*</span>
-            <input name="name" type="text" required="required" class="form-control" id="exampleInputEmail1" placeholder="Enter name">
+            <input name="name" type="text" required="required" class="form-control" id="exampleInputEmail1" placeholder="Enter name" value="{{user.name}}">
             <span style="color: red;">{{user.nameError}}</span>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Email</label><span style="color: red;">*</span>
-            <input name="email" type="text" required="required" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+            <input name="email" type="text" required="required" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="{{user.email}}">
             <span style="color: red;">{{user.emailError}}</span>
             <span style="color: red;">{{message}}</span>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label><span style="color: red;">*</span>
-            <input name="password" type="password" required="required" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input name="password" type="password" required="required" class="form-control" id="exampleInputPassword1" placeholder="Password" value="{{user.password}}">
             <span style="color: red;">{{user.passwordError}}</span>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Address</label><span style="color: red;">*</span>
-            <input name="address" type="text" required="required" class="form-control" id="exampleInputEmail1" placeholder="Enter address">
+            <input name="address" type="text" required="required" class="form-control" id="exampleInputEmail1" placeholder="Enter address" value="{{user.address}}">
             <span style="color: red;">{{user.addressError}}</span>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Phone number</label><span style="color: red;">*</span>
-            <input name="phoneNumber" type="number" required="required" class="form-control" id="exampleInputEmail1" placeholder="Enter number">
+            <input name="phoneNumber" type="number" required="required" class="form-control" id="exampleInputEmail1" placeholder="Enter number" value="{{user.phoneNumber}}">
             <span style="color: red;">{{user.phoneNumberError}}</span>
         </div><br>
-        <label for="exampleInputEmail1">User type</label><br>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="role" id="inlineRadio1" checked value="user">
-            <label class="form-check-label" for="inlineRadio1">user</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="role" id="inlineRadio2" value="vendor">
-            <label class="form-check-label" for="inlineRadio2">vendor</label>
-        </div><br><br>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Vendor security code</label>
-            <input name="code" type="password" class="form-control" id="exampleInputPassword1" placeholder="5-digit code">
-            <small id="emailHelp" class="form-text text-muted">Leave blank if registering as a user.</small>
-        </div>
-
-        
-        <button style="text-align: center;"  type="submit" class="btn btn-primary">Sign Up</button>
+        {{#if edit}}
+        {{else}}
+            <label for="exampleInputEmail1">User type</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="role" id="inlineRadio1" checked value="user">
+                <label class="form-check-label" for="inlineRadio1">user</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="role" id="inlineRadio2" value="vendor">
+                <label class="form-check-label" for="inlineRadio2">vendor</label>
+            </div><br><br>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Vendor security code</label>
+                <input name="code" type="password" class="form-control" id="exampleInputPassword1" placeholder="5-digit code">
+                <small id="emailHelp" class="form-text text-muted">Leave blank if registering as a user.</small>
+            </div>
+        {{/if}}
+        {{#if edit}}
+            <button style="text-align: center;"  type="submit" class="btn btn-primary">Update</button>
+        {{else}}
+            <button style="text-align: center;"  type="submit" class="btn btn-primary">Sign Up</button>
+        {{/if}}
         </form>
     </div>
 </div>

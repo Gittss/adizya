@@ -25,10 +25,16 @@
               <li data-filter=".des"><a class="links" href="/product/add{{user.id}}">Add product</a></li>
               <li data-filter=".des"><a class="links" href="/product/viewProducts{{user.id}}">View products</a></li>
             </ul> 
+            <ul>
+              <li><a class="links" href="/account/update/{{user.id}}"><i class="fa fa-pencil"></i> Edit profile</a> </li>
+            </ul>
           {{else}}
             <ul>
               <li><a class="links" href="/cart/{{user.id}}">Buy products</a> </li>
               <li><a class="links" href="/cart/view/{{user.id}}">My cart</a> </li>
+            </ul>
+            <ul>
+              <li><a class="links" href="/account/update/{{user.id}}"><i class="fa fa-pencil"></i> Edit profile</a> </li>
             </ul>
           {{/if}}         
         </div>

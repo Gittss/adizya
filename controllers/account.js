@@ -3,7 +3,7 @@ const User = require("../models/user");
 const util = require("../config/utilityFunctions");
 
 router.get("/signUp", (req, res) => {
-  res.render("signUp", { title: "Sign up" });
+  res.render("signUp", { title: "Sign up", edit: 0 });
 });
 
 router.get("/login", (req, res) => {
@@ -11,17 +11,59 @@ router.get("/login", (req, res) => {
 });
 
 router.post("/signUp", (req, res) => {
-  User.findOne({ email: req.body.email }, (err, obj) => {
-    if (obj === null) {
-      addUser(req, res);
-    } else {
-      console.log("Email taken");
-      res.render("signUp", {
-        message: "Email already exist",
-        title: "Sign Up",
-      });
-    }
-  });
+  if (req.body.id == "") {
+    User.findOne({ email: req.body.email }, (err, obj) => {
+      if (obj === null) {
+        addUser(req, res);
+      } else {
+        console.log("Email taken");
+        res.render("signUp", {
+          message: "Email already exist",
+          title: "Sign Up",
+          edit: 0,
+        });
+      }
+    });
+  } else {
+    User.findById(req.body.id, (err, user) => {
+      if (!err) {
+        var ven;
+        if (user.role === "vendor") {
+          ven = 1;
+        } else ven = 0;
+        user.name = req.body.name;
+        user.email = req.body.email;
+        user.password = req.body.password;
+        user.address = req.body.address;
+        user.phoneNumber = req.body.phoneNumber;
+        User.findByIdAndUpdate(req.body.id, user, (err) => {
+          if (!err) {
+            user.save((err) => {
+              if (!err) {
+                res.render("home", {
+                  title: "Home",
+                  user: user,
+                  ven: ven,
+                });
+              }
+            });
+          } else {
+            if (err.name == "ValidationError") {
+              util.handleValidationError(err, req.body);
+              res.render("signUp", {
+                title: "Edit Profile",
+                user: req.body,
+                edit: 1,
+              });
+            }
+          }
+        });
+      } else {
+        console.log(err);
+        res.redirect("back");
+      }
+    });
+  }
 });
 
 router.post("/login", (req, res) => {
@@ -67,6 +109,18 @@ router.post("/login", (req, res) => {
   });
 });
 
+router.get("/update/:id", (req, res) => {
+  User.findById(req.params.id, (err, doc) => {
+    if (!err) {
+      res.render("signUp", {
+        title: "Edit Profile",
+        user: doc,
+        edit: 1,
+      });
+    }
+  });
+});
+
 function addUser(req, res) {
   var user = new User(req.body);
   var message;
@@ -95,6 +149,7 @@ function addUser(req, res) {
         res.render("signUp", {
           title: "Sign Up",
           user: req.body,
+          edit: 0,
         });
       } else console.log("error in Signing up -> " + err);
     }

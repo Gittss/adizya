@@ -24,6 +24,19 @@ const productSchema = new mongoose.Schema({
     data: Buffer,
     contentType: String,
   },
+  description: {
+    type: String,
+  },
+  material: {
+    type: String,
+    enum: ["Cotton", "Viscose Rayon", "Georgette", "Net", "Silk", "Wool"],
+    default: "Viscose Rayon",
+  },
+  care: {
+    type: String,
+    enum: ["Hand wash", "Machine Wash"],
+    default: "Machine Wash",
+  },
   vendorId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
