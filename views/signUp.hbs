@@ -22,7 +22,7 @@
 </div>
 <div class="form-elegant ">
     <div class="containerr">
-        <form action="/account/signUp" method="POST">
+        <form name="regForm" action="/account/signUp" method="POST" onsubmit="return validate()">
         <input type="hidden" name="id" value="{{user.id}}">
         <div class="form-group">
             <label for="exampleInputEmail1">Name</label><span style="color: red;">*</span>
@@ -75,3 +75,21 @@
         </form>
     </div>
 </div>
+<script lang="text/javascript">
+    function validate(){
+        var phoneNumber = document.forms["regForm"]["phoneNumber"];
+        var email = document.forms["regForm"]["email"].value;
+        var atpos = email.indexOf("@");
+        var dotpos = email.lastIndexOf(".");
+
+        if(atpos<1 || dotpos<atpos+2 || dotpos+2>email.length){
+            window.alert("Please enter a valid e-mail address.");  
+            return false;  
+        }
+        if(phoneNumber.value.length != 10){
+            window.alert("Invalid phone number. Must be 10 digits");
+            phoneNumber.focus();
+            return false;
+        }
+    }
+</script>

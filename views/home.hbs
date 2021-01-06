@@ -21,20 +21,17 @@
         <div class="filters">
           {{#if role}}
             <ul>
-              <li class="active" data-filter="*">All Products</li>
-              <li data-filter=".des"><a class="links" href="/product/add{{user.id}}">Add product</a></li>
-              <li data-filter=".des"><a class="links" href="/product/viewProducts{{user.id}}">View products</a></li>
-            </ul> 
-            <ul>
-              <li><a class="links" href="/account/update/{{user.id}}"><i class="fa fa-pencil"></i> Edit profile</a> </li>
+              <li><a class="links" href="/product/add{{user.id}}"><i class="fa fa-plus links"></i> Add product</a></li>
+              <li><a class="links" href="/product/viewProducts{{user.id}}"><i class="fa fa-eye links"></i> View products</a></li>
+              <li><a class="links" href="/account/update/{{user.id}}"><i class="fas fa-pencil-alt links"></i> Edit profile</a> </li>
+              <li><a onclick="return confirm('Delete your account permanently ?');" class="links" href="/account/delete/{{user.id}}"><i class="fa fa-trash links"></i> Delete account</a> </li>
             </ul>
           {{else}}
             <ul>
-              <li><a class="links" href="/cart/{{user.id}}">Buy products</a> </li>
-              <li><a class="links" href="/cart/view/{{user.id}}">My cart</a> </li>
-            </ul>
-            <ul>
-              <li><a class="links" href="/account/update/{{user.id}}"><i class="fa fa-pencil"></i> Edit profile</a> </li>
+              <li><a class="links" href="/cart/{{user.id}}"><i class="fa fa-tshirt links"></i> Buy products</a> </li>
+              <li><a class="links" href="/cart/view/{{user.id}}"><i class="fa fa-shopping-cart links"></i> My cart</a> </li>
+              <li><a class="links" href="/account/update/{{user.id}}"><i class="fas fa-pencil-alt links"></i> Edit profile</a> </li>
+              <li><a onclick="return confirm('Delete your account permanently ?');" class="links" href="/account/delete/{{user.id}}"><i class="fa fa-trash links"></i> Delete account</a> </li>
             </ul>
           {{/if}}         
         </div>
@@ -57,18 +54,15 @@
                 <a href="#"><h4>Adizya</h4></a>
                 <h6>Rs 1399</h6>
                 <p>Beige and Blue printed straight kurta, has a mandarin collar, three-quarter sleeves, straight hem, and side slits.</p><br>
-                {{!-- <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (24)</span> --}}
               </div>
             </div>
           </div>
-        </div></div></div></div></div></div>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
    
 
 <script language = "text/Javascript"> 

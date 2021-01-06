@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const User = require("../models/user");
 const util = require("../config/utilityFunctions");
+const { Product, User } = require("../models");
 
 router.get("/signUp", (req, res) => {
   res.render("signUp", { title: "Sign up", edit: 0 });
@@ -117,6 +117,24 @@ router.get("/update/:id", (req, res) => {
         user: doc,
         edit: 1,
       });
+    }
+  });
+});
+
+router.get("/delete/:id", (req, res) => {
+  Product.find({ vendorId: req.params.id }, (err, docs) => {
+    var i = 0;
+    for (i = 0; i < docs.length; i++) {
+      Product.findByIdAndRemove(docs[i].id, (err, doc) => {
+        if (err) {
+          console.log(err);
+        }
+      });
+    }
+  });
+  User.findByIdAndRemove(req.params.id, (err) => {
+    if (!err) {
+      res.redirect("/");
     }
   });
 });

@@ -417,8 +417,6 @@ header .navbar {
 }
 
 .product-item {
-  border: 1px solid #eee;
-  margin-bottom: 30px;
 }
 
 .product-item .down-content {
@@ -427,8 +425,12 @@ header .navbar {
 }
 
 .product-item img {
-  width: 100%;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  height: 450px;
+  width: 300px;
 }
 
 .product-item .down-content h4 {
